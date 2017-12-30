@@ -28,6 +28,21 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+@app.errorhandler(404)
+def 404():
+	return render_template("error.html",error=404)
+
+@app.errorhandler(410)
+def 410():
+	return render_template("error.html",error=410)
+
+@app.errorhandler(403)
+def 403():
+	return render_template("error.html",error=403)
+
+@app.errorhandler(500)
+def 500():
+	return render_template("error.html",error=500)
 
 
 @app.route("/")
