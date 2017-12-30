@@ -1,3 +1,5 @@
 Flask
 requests>=2.12
 gunicorn
+sqlalchemy
+httplib2
