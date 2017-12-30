@@ -19,6 +19,12 @@ import string
 app = Flask(__name__)
 app.secret_key = "aeiruh3gaoj56h9zb8m3v903p9g48avz96hga3j8qck9p9878rs87V=%(/BAG{GGAB/&B=N/ZSG"
 
+engine = create_engine('sqlite:///restaurantmenu.db')
+Base.metadata.bind = engine
+
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
+
 @app.route("/")
 @app.route("/index")
 def index():
