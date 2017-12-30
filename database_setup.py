@@ -61,4 +61,7 @@ engine = create_engine('sqlite:///restaurantmenuwithusers.db')
 
 
 def create_db():
-    Base.metadata.create_all(engine)
+    try:
+        Base.metadata.create_all(engine)
+    except:
+        print("The tables could not be created.")
