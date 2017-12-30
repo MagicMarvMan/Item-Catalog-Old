@@ -88,7 +88,7 @@ def fbconnect():
         and replace the remaining quotes with nothing so that it can be used directly in the graph
         api calls
     '''
-    token = bytes(bytes(result,'utf-8').split(',')[0].split(':')[1].replace('"', ''),'utf-8')
+    token = result.split(b',')[0].split(b':')[1].replace(b'"', b'')
 
     url = 'https://graph.facebook.com/v2.8/me?access_token=%s&fields=name,id,email' % token
     h = httplib2.Http()
