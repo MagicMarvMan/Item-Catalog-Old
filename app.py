@@ -4,8 +4,7 @@ from flask import Flask, render_template, request, redirect, jsonify, url_for, f
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
 from database_setup import User, Base, Restaurant, MenuItem, create_db
-if(os.path.isfile("restaurantmenu.db")):
-	os.remove("restaurantmenu.db")
+if not os.path.isfile("restaurantmenuwithusers.db"):
 	create_db()
 else:
 	create_db()
