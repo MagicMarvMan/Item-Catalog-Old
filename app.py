@@ -5,8 +5,7 @@ if(os.path.isfile("restaurantmenu.db")):
 from flask import Flask, render_template, request, redirect, jsonify, url_for, flash
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
-from database_setup import Base, Restaurant, MenuItem, create_db
-create_db()
+from database_setup import User, Base, Restaurant, MenuItem, create_db
 from flask import session as login_session
 import random
 from oauth2client.client import flow_from_clientsecrets
