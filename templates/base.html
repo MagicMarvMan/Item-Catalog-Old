@@ -1,14 +1,14 @@
+<!DOCTYPE html>
 <html>
     <head>
+      <meta charset="utf-8">
       {% if title %}
-      <title>{{ title }} - Microblog</title>
+      <title>{{ title }} - MarvNet</title>
       {% else %}
-      <title>Welcome to Microblog</title>
+      <title>MarvNet</title>
       {% endif %}
     </head>
     <body>
-        <div>Microblog: <a href="/index">Home</a></div>
-        <hr>
         {% block content %}{% endblock %}
     </body>
 </html>
