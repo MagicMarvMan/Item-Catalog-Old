@@ -16,6 +16,9 @@ from flask import make_response
 import requests
 import string
 
+CLIENT_ID = json.loads(
+    open('client_secrets.json', 'r').read())['web']['client_id']
+
 app = Flask(__name__)
 app.secret_key = "aeiruh3gaoj56h9zb8m3v903p9g48avz96hga3j8qck9p9878rs87V=%(/BAG{GGAB/&B=N/ZSG"
 
