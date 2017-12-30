@@ -25,7 +25,7 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-create_db()
+
 
 @app.route("/")
 @app.route("/index")
