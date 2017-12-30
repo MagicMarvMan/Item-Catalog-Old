@@ -19,6 +19,8 @@ import string
 CLIENT_ID = json.loads(
     open('client_secrets.json', 'r').read())['web']['client_id']
 
+fb_version = "v2.11"
+
 app = Flask(__name__)
 app.secret_key = "aeiruh3gaoj56h9zb8m3v903p9g48avz96hga3j8qck9p9878rs87V=%(/BAG{GGAB/&B=N/ZSG"
 
@@ -80,7 +82,7 @@ def fbconnect():
 
 
     # Use token to get user info from API
-    userinfo_url = "https://graph.facebook.com/v2.8/me"
+    userinfo_url = "https://graph.facebook.com/"+fb_version+"/me"
     '''
         Due to the formatting for the result from the server token exchange we have to
         split the token first on commas and select the first index which gives us the key : value
@@ -91,7 +93,7 @@ def fbconnect():
     token = token = result.split(',')[0].split(':')[1].replace('"', '')
     print(token)
 
-    url = 'https://graph.facebook.com/v2.8/me?access_token=%s&fields=name,id,email' % token
+    url = 'https://graph.facebook.com/'+fb_version+'/me?access_token=%s&fields=name,id,email' % token
     h = httplib2.Http()
     result = h.request(url, 'GET')[1]
     # print "url sent for API access:%s"% url
@@ -106,7 +108,7 @@ def fbconnect():
     login_session['access_token'] = token
 
     # Get user picture
-    url = 'https://graph.facebook.com/v2.8/me/picture?access_token=%s&redirect=0&height=200&width=200' % token
+    url = 'https://graph.facebook.com/'+fb_version+'/me/picture?access_token=%s&redirect=0&height=200&width=200' % token
     h = httplib2.Http()
     result = h.request(url, 'GET')[1]
     data = json.loads(result)
