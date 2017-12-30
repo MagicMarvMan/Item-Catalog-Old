@@ -29,19 +29,19 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 @app.errorhandler(404)
-def 404(e):
+def page_not_found(e):
 	return(render_template("error.html",error=404),404)
 
 @app.errorhandler(410)
-def 410(e):
+def page_gone(e):
 	return(render_template("error.html",error=410),410)
 
 @app.errorhandler(403)
-def 403(e):
+def page_forbidden(e):
 	return(render_template("error.html",error=403),403)
 
 @app.errorhandler(500)
-def 500(e):
+def page_server_error(e):
 	return(render_template("error.html",error=500),500)
 
 
