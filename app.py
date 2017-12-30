@@ -1,3 +1,7 @@
+import os
+import os.path
+if(os.path.isfile("restaurantmenu.db")):
+	os.remove("restaurantmenu.db")
 from flask import Flask, render_template, request, redirect, jsonify, url_for, flash
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
