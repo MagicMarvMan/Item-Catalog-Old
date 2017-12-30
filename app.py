@@ -89,6 +89,7 @@ def fbconnect():
         api calls
     '''
     token = result.split(b',')[0].split(b':')[1].replace(b'"', b'')
+    print(token)
 
     url = 'https://graph.facebook.com/v2.8/me?access_token=%s&fields=name,id,email' % token
     h = httplib2.Http()
