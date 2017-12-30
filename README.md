@@ -12,3 +12,6 @@ You can find a demo of this application at the **[Heroku-Page](https://fullstack
 5. Run the `app.py` file using `python3 app.py`
 6. Access the page under the shown address
 7. **Done! Enjoy :)**
+
+## Known issues
+- There are problems with the database creation
