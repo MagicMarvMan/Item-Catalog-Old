@@ -3,6 +3,7 @@ import os.path
 from flask import Flask, render_template, request, redirect, jsonify, url_for, flash
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
+os.system("python prepare_database.py")
 from database_setup import User, Base, Restaurant, MenuItem
 from flask import session as login_session
 import random
